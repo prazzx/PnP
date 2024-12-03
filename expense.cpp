@@ -10,15 +10,15 @@ public:
     string incomeType;
     int day;
 
-    // Default Constructor
+   
     everyDay() : spent(0), income(0), spentType("N/A"), incomeType("N/A"), day(0) {}
 
-    // Parameterized Constructor
+    
     everyDay(int S, int I, string St, string It, int D)
         : spent(S), income(I), spentType(St), incomeType(It), day(D) {}
 };
 
-// Function to input the number of tracking days
+
 int entryDays() {
     int n;
     cout << "How long do you want this app to help you track your finances? (In days)" << endl;
@@ -26,7 +26,7 @@ int entryDays() {
     return n;
 }
 
-// Function to record data for multiple days
+
 void entryData(int n, everyDay a[]) {
     for (int i = 0; i < n; i++) {
         cout << "___________ Recording data for Day " << i + 1 << " ___________" << endl;
@@ -44,7 +44,7 @@ void entryData(int n, everyDay a[]) {
     }
 }
 
-// Function to calculate and display a report
+
 void calculations(int n, everyDay a[]) {
     int totalSpent = 0, totalIncome = 0;
     cout << "\n___________ Generating Report ___________" << endl;
@@ -61,9 +61,9 @@ void calculations(int n, everyDay a[]) {
 
 int main() {
     int days = entryDays();
-    everyDay* records = new everyDay[days]; // Dynamic array
+    everyDay* records = new everyDay[days]; 
     entryData(days, records);
     calculations(days, records);
-    delete[] records; // Free allocated memory
+    delete[] records; 
     return 0;
 }
